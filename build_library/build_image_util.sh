@@ -66,7 +66,7 @@ extract_update() {
 
 zip_update_tools() {
   # There isn't a 'dev' variant of this zip, so always call it production.
-  local update_zip="coreos_production_update.zip"
+  local update_zip="${LOWER_BRAND}_production_update.zip"
 
   info "Generating update tools zip"
   # Make sure some vars this script needs are exported

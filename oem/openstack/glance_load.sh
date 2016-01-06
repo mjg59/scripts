@@ -26,7 +26,7 @@ else
   release="${baseurl##*/}"
 fi
 version_url="${baseurl}/version.txt"
-image_url="${baseurl}/coreos_production_openstack_image.img.bz2"
+image_url="${baseurl}/${LOWER_BRAND}_production_openstack_image.img.bz2"
 
 # use the following location as our local work space
 tmplocation=$(mktemp -d /var/tmp/glanceload.XXX)

@@ -555,11 +555,11 @@ _write_iso_disk() {
 INCLUDE /syslinux/syslinux.cfg
 EOF
     cat<<EOF > syslinux/syslinux.cfg
-default coreos
+default ${LOWER_BRAND}
 prompt 1
 timeout 15
 
-label coreos
+label ${LOWER_BRAND}
   menu default
   kernel /coreos/vmlinuz
   append initrd=/coreos/cpio.gz coreos.autologin
@@ -997,8 +997,8 @@ _write_box_bundle() {
 
     cat >"${json}" <<EOF
 {
-  "name": "coreos-${VM_GROUP}",
-  "description": "CoreOS ${VM_GROUP}",
+  "name": "${LOWER_BRAND}-${VM_GROUP}",
+  "description": "${BRAND} ${VM_GROUP}",
   "versions": [{
     "version": "${COREOS_VERSION_ID}",
     "providers": [{

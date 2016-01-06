@@ -100,12 +100,12 @@ if [[ ${FLAGS_do_gce} -eq ${FLAGS_TRUE} ]]; then
         addimage \
         --description="${gce_desc}" \
         "${gce_name}" \
-        "${gs_build}/coreos_production_gce.tar.gz"
+        "${gs_build}/${LOWER_BRAND}_production_gce.tar.gz"
     gce_path="projects/coreos-cloud/global/images/${gce_name}"
     gce_temp=$(mktemp --suffix=.txt)
     trap "rm -f '${gce_temp}'" EXIT
     echo "${gce_path}" > "${gce_temp}"
-    gsutil cp "${gce_temp}" "${gs_release}/coreos_production_gce.txt"
+    gsutil cp "${gce_temp}" "${gs_release}/${LOWER_BRAND}_production_gce.txt"
     rm -f "${gce_temp}"
     trap - EXIT
 

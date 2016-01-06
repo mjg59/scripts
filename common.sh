@@ -379,10 +379,15 @@ fi
 # Directory to store built images.  Should be set by sourcing script when used.
 BUILD_DIR=
 
+# OS brand name
+BRAND="CoreOS"
+COLOR_BRAND="Core\033[38;5;206mO\033[38;5;45mS\033[39m"
+LOWER_BRAND=`echo $BRAND | tr [A-Z] [a-z]`
+
 # Standard filenames
-COREOS_DEVELOPER_IMAGE_NAME="coreos_developer_image.bin"
-COREOS_DEVELOPER_CONTAINER_NAME="coreos_developer_container.bin"
-COREOS_PRODUCTION_IMAGE_NAME="coreos_production_image.bin"
+COREOS_DEVELOPER_IMAGE_NAME="${LOWER_BRAND}_developer_image.bin"
+COREOS_DEVELOPER_CONTAINER_NAME="${LOWER_BRAND}_developer_container.bin"
+COREOS_PRODUCTION_IMAGE_NAME="${LOWER_BRAND}_production_image.bin"
 
 # -----------------------------------------------------------------------------
 # Functions

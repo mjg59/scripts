@@ -12,7 +12,7 @@ export GCLIENT_ROOT=$(readlink -f "${SCRIPT_ROOT}/../../")
 
 DEFINE_string board "amd64-usr" \
     "Board type of the image"
-DEFINE_string payload "coreos_production_update.gz" \
+DEFINE_string payload "${LOWER_BRAND}_production_update.gz" \
     "Path to the update payload"
 DEFINE_string version "${COREOS_VERSION_STRING}" \
     "Version number of this build."

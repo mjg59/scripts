@@ -17,7 +17,7 @@ USAGE="Usage: $0 -V 100.0.0
 This script must be run from an ec2 host with the ec2 tools installed.
 "
 
-IMAGE="coreos_production_ami"
+IMAGE="${LOWER_BRAND}_production_ami"
 GS_URL="gs://builds.release.core-os.net"
 AMI=
 VER=

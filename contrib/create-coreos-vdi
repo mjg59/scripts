@@ -52,7 +52,7 @@ WORKDIR="${DEST}/tmp.${RANDOM}"
 mkdir "$WORKDIR"
 trap "rm -rf '${WORKDIR}'" EXIT
 
-RAW_IMAGE_NAME="coreos_production_image.bin"
+RAW_IMAGE_NAME="${LOWER_BRAND}_production_image.bin"
 IMAGE_NAME="${RAW_IMAGE_NAME}.bz2"
 DIGESTS_NAME="${IMAGE_NAME}.DIGESTS.asc"
 
@@ -82,7 +82,7 @@ VERSION_NAME="version.txt"
 VERSION_URL="${BASE_URL}/${VERSION_NAME}"
 wget --no-verbose -O "${WORKDIR}/${VERSION_NAME}" "${VERSION_URL}"
 . "${WORKDIR}/${VERSION_NAME}"
-VDI_IMAGE_NAME="coreos_production_${COREOS_BUILD}.${COREOS_BRANCH}.${COREOS_PATCH}.vdi"
+VDI_IMAGE_NAME="${LOWER_BRAND}_production_${COREOS_BUILD}.${COREOS_BRANCH}.${COREOS_PATCH}.vdi"
 VDI_IMAGE="${DEST}/${VDI_IMAGE_NAME}"
 
 # Setup GnuPG for verifying the image signature

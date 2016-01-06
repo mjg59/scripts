@@ -14,13 +14,13 @@ set -e
 WORKDIR=$(mktemp --directory)
 trap "rm --force --recursive ${WORKDIR}" SIGINT SIGTERM EXIT
 
-IMAGE_PATH="${WORKDIR}/coreos_production_azure_image.vhd"
+IMAGE_PATH="${WORKDIR}/${LOWER_BRAND}_production_azure_image.vhd"
 
 UGROUP="${1^}"
 LGROUP="${1,}"
 VERSION=$2
 DATE=$3
-GS_BUCKET_URL="gs://builds.release.core-os.net/${LGROUP}/boards/amd64-usr/${VERSION}/coreos_production_azure_image.vhd"
+GS_BUCKET_URL="gs://builds.release.core-os.net/${LGROUP}/boards/amd64-usr/${VERSION}/${LOWER_BRAND}_production_azure_image.vhd"
 
 if [[ -z $UGROUP || -z $VERSION ]]; then
 	echo "Usage: $0 <group> <version> [<published date>]"

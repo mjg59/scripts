@@ -143,6 +143,9 @@ if [[ ! -f "${ESP_DIR}/coreos/grub/grub.cfg.tar" ]]; then
         sed 's/@@MOUNTUSR@@/mount.usr/' > "${GRUB_TEMP_DIR}/grub.cfg"
     fi
 
+    # Sort out the branding
+    sed "s/@@BRAND@@/${BRAND}/" -i "${GRUB_TEMP_DIR}/grub.cfg"
+
     sudo tar cf "${ESP_DIR}/coreos/grub/grub.cfg.tar" \
 	 -C "${GRUB_TEMP_DIR}" "grub.cfg"
 fi
